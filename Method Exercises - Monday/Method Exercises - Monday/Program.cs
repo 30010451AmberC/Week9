@@ -15,8 +15,10 @@ namespace Method_Exercises___Monday
             Console.WriteLine("Please enter your height (m): ");
             int Height = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"Your BMI is: {Bmi(Weight, Height)}");
+            Console.WriteLine($"Your BMI is: {Bmi(Weight, Height)}"); 
             
+
+
             int bmic = Bmi(Weight, Height);
             Console.WriteLine($"You are {Category(bmic)}");
         }
@@ -55,7 +57,6 @@ namespace Method_Exercises___Monday
         {
             Console.WriteLine("Please enter cents: ");
             int Cents = int.Parse(Console.ReadLine());
-            string UpDown = "Up";
             Console.WriteLine($"{Cents} rounded is: {Round(Cents)}");
 
         }
@@ -75,9 +76,9 @@ namespace Method_Exercises___Monday
                 case 7:
                 case 8:
                 case 9:
-                    return  "UP!";
+                    return "UP!";
 
-                default: 
+                default:
                     return "Something went wrong!";
 
 
@@ -86,4 +87,65 @@ namespace Method_Exercises___Monday
 
         }
     }
+
+    class Program4 //Task 4:
+    {
+            public static void task4()
+            {
+                Console.WriteLine("Please enter a number between 1 - 5:");
+                int num = int.Parse(Console.ReadLine());
+                Console.WriteLine($"{num} is {Greeting(num)}");
+            }
+
+            public static string Greeting(int num)
+            {
+                string[] array1 = new string[5];
+                array1[0] = "Hello";
+                array1[1] = "Kia Ora";
+                array1[2] = "Kon'nichiwa";
+                array1[3] = "Bonjour";
+                array1[4] = "Talofa";
+                return array1[num];
+            }
+    }
+
+    class Program5 // Task 5:
+    {
+       public static void task5()
+       {
+                Console.WriteLine("Enter first number in equation: ");
+                int num1 = int.Parse(Console.ReadLine());
+                Console.WriteLine("Please enter an operator (-, +, *, /, or %): ");
+                string Operator = Console.ReadLine();
+                Console.WriteLine("Enter second number for equation: ");
+                int num2 = int.Parse(Console.ReadLine());
+                Console.WriteLine($"{num1} {Operator} {num2}= {Calculator(num1, num2, Operator)}");
+       }
+
+       public static int Calculator(int num1, int num2, string Operator)
+       {
+         switch (Operator)
+         {
+                case "+":
+                    return num1 + num2;
+                   
+                case "-":
+                    return num1 - num2;
+                    
+                case "/":
+                    return num1 / num2;
+                  
+                case "*":
+                    return num1 * num2;
+                case "%":
+                    return num1 % num2;
+                    
+
+         }
+
+
+       }
+    }
+     
+    
 }
